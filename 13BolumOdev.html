@@ -1,0 +1,43 @@
+//Ad boşsa uyarı
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    Ad: <input type="text" id="ad">
+    <button onclick="adKontrol()">Kontrol Et</button>
+
+    <script>
+        function adKontrol() {
+            var ad = document.getElementById("ad").value;
+            if (ad == "") {
+                alert("Lütfen adınızı giriniz");
+            }
+        }
+    </script>
+  </body>
+</html>
+
+//Vize notu 0-100 dışındaysa uyarı
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    Vize 1: <input type="text" id="vize1">
+    <button onclick="vizeKontrol()">Kontrol Et</button>
+
+    <script>
+        function vizeKontrol() {
+            var vize = document.getElementById("vize1").value;
+            if (vize === "" || isNaN(vize) || vize < 0 || vize > 100) {
+                alert("Lütfen geçerli bir değer giriniz");
+            }
+        }
+    </script>
+  </body>
+</html>

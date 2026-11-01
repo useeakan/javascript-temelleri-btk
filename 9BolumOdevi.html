@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">;
+  </head>
+  <body>
+    <script>
+    class Dikdortgen {
+      constructor(genislik, yukseklik) {
+        this.genislik = genislik;
+        this.yukseklik = yukseklik;
+      }
+
+      alan() {
+        return this.genislik * this.yukseklik;
+      }
+
+      cevre() {
+        return 2 * (this.genislik + this.yukseklik);
+      }
+
+      yazdir() {
+        document.getElementById("sonuc").innerText =
+          "Dikdörtgenin alanı: " + this.alan() +
+          " | Dikdörtgenin çevresi: " + this.cevre();
+      }
+    }
+         function hesapla() {
+      
+      var g = parseFloat(document.getElementById("genislik").value);
+      var y = parseFloat(document.getElementById("yukseklik").value);
+
+      
+      var dikdortgen = new Dikdortgen(g, y);
+
+      dikdortgen.yazdir();
+    }
+    </script>
+  </body>
+</html>

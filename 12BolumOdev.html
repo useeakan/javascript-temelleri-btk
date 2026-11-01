@@ -1,0 +1,96 @@
+//Document nesnesi
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document Örneği</title>
+  </head>
+  <body>
+    <h2 id="baslik">Document Nesnesi</h2>
+    <a href="https://www.w3schools.com">W3Schools</a>
+    <form name="form1"></form>
+    <p id="sonuc"></p>
+
+    <script>
+        document.write("Sayfa başlığı: " + document.title + "<br>");
+        document.write("Sayfa adresi (URL): " + document.URL + "<br>");
+        document.write("Alan adı (domain): " + document.domain + "<br>");
+        document.write("Karakter kodlaması: " + document.characterSet + "<br>");
+        document.write("Son değiştirilme: " + document.lastModified + "<br>");
+        document.write("Form sayısı: " + document.forms.length + "<br>");
+        document.write("Link sayısı: " + document.links.length + "<br>");
+        document.write("Resim sayısı: " + document.images.length + "<br>");
+
+        var yeni = document.createElement("p");
+        yeni.innerHTML = "Bu paragraf JavaScript ile eklendi.";
+        document.body.appendChild(yeni);
+
+        document.getElementById("sonuc").innerHTML = "getElementById ile yazıldı.";
+    </script>
+  </body>
+</html>
+
+//windows nesnesi
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <button onclick="yeniPencere()">Yeni Pencere Aç</button>
+    <button onclick="pencereKapat()">Bu Pencereyi Kapat</button>
+    <br><br>
+
+    <script>
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        document.write("Tarayıcı pencere genişliği: " + w + " px<br>");
+        document.write("Tarayıcı pencere yüksekliği: " + h + " px<br>");
+
+        function yeniPencere() {
+            window.open("https://www.w3schools.com", "_blank", "width=400,height=300");
+        }
+
+        function pencereKapat() {
+            window.close();
+        }
+    </script>
+  </body>
+</html>
+
+//screen nesnesi
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+        document.write("Ekran genişliği: " + screen.width + " px<br>");
+        document.write("Ekran yüksekliği: " + screen.height + " px<br>");
+        document.write("Kullanılabilir genişlik: " + screen.availWidth + " px<br>");
+        document.write("Kullanılabilir yükseklik: " + screen.availHeight + " px<br>");
+        document.write("Renk derinliği: " + screen.colorDepth + " bit<br>");
+        document.write("Piksel derinliği: " + screen.pixelDepth + " bit");
+    </script>
+  </body>
+</html>
+
+//history nesnesi
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h3>History Nesnesi</h3>
+    <button onclick="history.back()">Geri</button>
+    <button onclick="history.forward()">İleri</button>
+    <button onclick="history.go(-2)">2 Sayfa Geri</button>
+    <br><br>
+
+    <script>
+        document.write("Geçmişteki sayfa sayısı: " + history.length);
+    </script>
+  </body>
+</html>

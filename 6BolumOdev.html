@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+        // 1.ci soru
+
+        // değişkenler
+        var vize1, vize2, final, ort;
+
+        // değeri al
+        vize1 = Number(prompt("Vize1:"));
+        vize2 = Number(prompt("Vize2:"));
+        final = Number(prompt("Final:"));
+
+        // işlem: vize ortalamasının %40'ı + final'in %60'ı
+        ort = ((vize1 + vize2) / 2) * 0.4 + final * 0.6;
+
+        // sorgu
+        if(ort < 50)
+            alert("Ortalama=" + ort + " Kaldı!!!");
+        else
+            alert("Ortalama=" + ort + " Geçti!!!");
+
+        //2. soru
+               // değişken
+        var sicaklik;
+
+        // değeri al
+        sicaklik = Number(prompt("Hava sıcaklığı:"));
+
+        // sorgu
+        if(sicaklik < 0)
+            alert("Dondurucu");
+        else if(sicaklik < 15)
+            alert("Soğuk");
+        else if(sicaklik < 25)
+            alert("Ilık");
+        else
+            alert("Sıcak");
+    </script>
+  </body>
+</html>

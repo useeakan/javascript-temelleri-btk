@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">;
+  </head>
+  <body>
+    <form>
+        Sayı:<input type="text" id="sayi"><br>
+        Karesi:<input type="karesi" id="sayi"><br>
+        <input type="button" value="Hesapla" onclick="hesapla()">
+    </form>
+    <script>
+        function hesapla(){
+            var sayi=document.getElementById("sayi").value;
+            if(sayi==""){
+                alert("lütfen sayı giriniz!!!");
+            }
+            else{
+                sayi=Number(sayi);
+                if(sayi<=0){
+                    alert("Pozitif sayı giriniz!!!")
+                }
+            else{
+                var kare=sayi*sayi;
+                document.getElementById("karesi").innerHTML=kare;
+                }
+            }
+
+        }
+
+        
+    </script>
+  </body>
+</html>

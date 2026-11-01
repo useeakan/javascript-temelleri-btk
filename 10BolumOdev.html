@@ -1,0 +1,63 @@
+// 1. soru karekök
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+        var sayi = Number(prompt("Bir sayı giriniz:"));
+        var karekok = Math.sqrt(sayi);
+        document.write(sayi + " sayısının karekökü: " + karekok);
+    </script>
+  </body>
+</html>
+
+
+// 2. soru Rastgele Sayı
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+        for (var i = 1; i <= 5; i++) {
+            document.write(i + ". rastgele sayı: " + Math.random() + "<br>");
+        }
+    </script>
+  </body>
+</html>
+
+
+//3s soru Çemberin alanı ve çevresi
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+        var r = Number(prompt("Çemberin yarıçapını giriniz:"));
+        var alan = Math.PI * r * r;
+        var cevre = 2 * Math.PI * r;
+        document.write("Çemberin alanı: " + alan + "<br>");
+        document.write("Çemberin çevresi: " + cevre);
+    </script>
+  </body>
+</html>
+
+
+//Metni büyük harfe çevirme
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+        var metin = prompt("Bir metin giriniz:");
+        document.write(metin.toUpperCase());
+    </script>
+  </body>
+</html>

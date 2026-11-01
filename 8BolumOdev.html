@@ -1,0 +1,41 @@
+// Yükseklik ve taban uzunluğu verilen üçgenin alanını ekrana yazdır:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">;
+  </head>
+  <body>
+    <script>
+  function ucgenAlan() {
+      var taban = parseFloat(document.getElementById("taban").value);
+      var yukseklik = parseFloat(document.getElementById("yukseklik").value);
+      var alan = (taban * yukseklik) / 2;
+      document.getElementById("sonuc").innerText = "Üçgenin alanı: " + alan;
+    }
+        
+    </script>
+  </body>
+</html>
+
+
+// Yarıçapı verilen çember alan ve çevresini yazdır:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">;
+  </head>
+  <body>
+    <script>
+    function cemberAlanCevre() {
+      var r = parseFloat(document.getElementById("yaricap").value);
+      var alan = Math.PI * r * r;
+      var cevre = 2 * Math.PI * r;
+      document.getElementById("sonuc").innerText =
+        "Çemberin alanı: " + alan.toFixed(2) + " | Çemberin çevresi: " + cevre.toFixed(2);
+
+    }
+    </script>
+  </body>
+</html>
