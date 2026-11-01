@@ -1,0 +1,159 @@
+
+<!-- KENDİ YAPTIĞIM OYUN -->
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Kart Oyunu</title>
+<style>
+  body { font-family: Arial; text-align: center; background: #ffffff; }
+  button { width: 70px; height: 70px; font-size: 30px; margin: 4px; }
+   /* PSG renkleri: lacivert, kırmızı, beyaz */
+  body {
+    font-family: Arial;
+    text-align: center;
+    background: #001d3d;
+    color: white;
+  }
+  h1 {
+    display: inline-block;
+    border-bottom: 4px solid #da291c;
+    padding-bottom: 8px;
+  }
+  /* Kapalı kartlar: lacivert zemin, kırmızı çerçeve */
+  button {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    margin: 4px;
+    background: #004170;
+    color: white;
+    border: 3px solid #da291c;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #mesaj {
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 30px;
+  }
+  /* Yeni oyun butonu */
+  #yeniOyun {
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    padding: 8px 20px;
+    background: #da291c;
+    border: 3px solid white;
+  }
+</style>
+</head>
+
+<body>
+ 
+<h1>Kart Oyunu</h1>
+<p>Hamle: <b id="hamleYazi">0</b> | Süre: <b id="sureYazi">0</b> sn</p>
+ 
+<script>
+
+  var semboller = ["Y", "Y", "U", "U", "S", "S", "PSG", "PSG",
+                   "F", "F", "C", "C", "A", "A", "N", "N"];
+
+  for (var i = 0; i < 50; i++) {
+    var a = Math.floor(Math.random() * 16);
+    var b = Math.floor(Math.random() * 16);
+    var gecici = semboller[a];
+    semboller[a] = semboller[b];
+    semboller[b] = gecici;
+  }
+ 
+  
+  for (var i = 0; i < 16; i++) {
+    document.write("<button id='k" + i + "' onclick='kartAc(" + i + ")'>?</button>");
+    if ((i + 1) % 4 == 0) {
+      document.write("<br>");
+    }
+  }
+</script>
+ 
+<p id="mesaj"></p>
+<button style="width:auto; height:auto; font-size:16px; padding:8px 16px" onclick="location.reload()">Yeni oyun</button>
+ 
+<script>
+  var birinci = -1;    
+  var ikinci = -1;     
+  var hamle = 0;
+  var bulunan = 0;     
+  var sure = 0;
+  var sayac = 0;
+  var basladi = false; 
+  var kilit = false;    
+ 
+  function sureArttir() {
+    sure++;
+    document.getElementById("sureYazi").innerHTML = sure;
+  }
+ 
+  function kartAc(sira) {
+    
+    if (kilit == true) {
+      return;
+    }
+ 
+ 
+    var dugme = document.getElementById("k" + sira);
+    if (dugme.innerHTML != "?") {
+      return;
+    }
+ 
+  
+    if (basladi == false) {
+      basladi = true;
+      sayac = setInterval(sureArttir, 1000);
+    }
+ 
+   
+    dugme.innerHTML = semboller[sira];
+ 
+    if (birinci == -1) {
+      birinci = sira;
+    } else {
+      ikinci = sira;
+      hamle++;
+      document.getElementById("hamleYazi").innerHTML = hamle;
+      kontrolEt();
+    }
+  }
+ 
+  function kontrolEt() {
+    if (semboller[birinci] == semboller[ikinci]) {
+   
+      bulunan++;
+      birinci = -1;
+      ikinci = -1;
+ 
+      if (bulunan == 8) {
+        clearInterval(sayac);
+        document.getElementById("mesaj").innerHTML =
+          "Tebrikler! " + hamle + " hamlede ve " + sure + " saniyede bitirdin.";
+      }
+    } else {
+  
+      kilit = true;
+      setTimeout(kapat, 800);
+    }
+  }
+ 
+  function kapat() {
+    document.getElementById("k" + birinci).innerHTML = "?";
+    document.getElementById("k" + ikinci).innerHTML = "?";
+    birinci = -1;
+    ikinci = -1;
+    kilit = false;
+  }
+</script>
+ 
+</body>
+</html>
